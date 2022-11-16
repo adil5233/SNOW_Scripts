@@ -1,0 +1,18 @@
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+	var str = 'Customer Confirmation Request';
+	var desc = g_form.getValue('short_description');
+	var groupStr = 'GCS One Service Desk';
+	var group = g_form.getValue('assignment_group');
+	
+	if(str==desc){
+		if(oldValue == '3' && newValue == '1'){
+			alert('Customer Service request detected Changing Assignment Group');
+			g_form.setValue('assignment_group','7f93014487db1110dd851f073cbb35ee');
+		}
+		
+	}
+   
+}
