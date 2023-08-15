@@ -9,6 +9,8 @@
 
     function clearIgnoredTickets() {
         ignoredTicketIds.clear();
+        lastNotifiedTicketCount = 0;
+        
     }
   
     async function mainLogic() {
@@ -18,6 +20,7 @@
   
       await delay(800);
       refreshButton.click();
+      console.log(ignoredTicketIds);
   
       await delay(800);
       const totalRows = ticketRows.length;
