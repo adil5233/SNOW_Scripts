@@ -5,6 +5,12 @@
     function delay(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
+
+    function clearIgnoredTickets() {
+        ignoredTicketIds.clear();
+        lastNotifiedTicketCount = 0;
+
+    }
   
     async function mainLogic() {
       const listWrapper = document.querySelector("body > sn-workspace-layout > sn-workspace-main > sn-workspace-primary-content > sn-ux-content-option:nth-child(3) > sn-workspace-list-module");
@@ -63,5 +69,6 @@
   
     const listWrapper = document.querySelector("body > sn-workspace-layout > sn-workspace-main > sn-workspace-primary-content > sn-ux-content-option:nth-child(3) > sn-workspace-list-module");
     setInterval(refreshAndNotify, refreshInterval);
+    setTimeout(clearIgnoredTickets, 300000);
   })();
   
