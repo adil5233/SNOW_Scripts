@@ -1,5 +1,5 @@
 (function() {
-    const refreshInterval = 40000;
+    const refreshInterval = 20000;
     const ignoredTicketIds = new Set();
   
     function delay(ms) {
@@ -48,7 +48,7 @@
             if (permission === "granted") {
               const notification = new Notification("Ticket Notification", {
                 body: notificationMessage,
-                requireInteraction: true
+                requireInteraction: false
               });
   
               notification.onclick = () => {
